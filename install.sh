@@ -9,7 +9,7 @@ verbis_defaults_rust
 
 curl -L -o out.tgz https://github.com/cargo-bins/cargo-binstall/releases/latest/download/cargo-binstall-x86_64-unknown-linux-musl.tgz
 tar -xf out.tgz
-mv cargo-binstall .cargo/bin
+mv cargo-binstall $HOME/.cargo/bin
 rm out.tgz
 
 cargo binstall ripgrep -y
