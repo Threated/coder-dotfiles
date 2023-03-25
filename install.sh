@@ -31,6 +31,8 @@ tar -xf out.tgz
 mv cargo-binstall $HOME/.cargo/bin
 rm out.tgz
 
+source $HOME/.cargo/env
+
 cargo binstall ripgrep -y
 cargo binstall bat -y
 
