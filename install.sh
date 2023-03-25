@@ -24,7 +24,7 @@ create_symlinks() {
     done
 }
 
-create_symlinks
+# create_symlinks
 
 curl -L -o out.tgz https://github.com/cargo-bins/cargo-binstall/releases/latest/download/cargo-binstall-x86_64-unknown-linux-musl.tgz
 tar -xf out.tgz
