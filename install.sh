@@ -15,6 +15,7 @@ rm out.tgz
 cargo binstall ripgrep -y
 cargo binstall bat -y
 
+sudo apt install tree -y
 sudo apt install zsh -y
 sudo chsh -s /bin/zsh
 
