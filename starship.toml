@@ -8,3 +8,6 @@ disabled = true
 
 [status]
 disabled = false
+
+[username]
+disabled = true
