@@ -38,7 +38,7 @@ cargo binstall bat -y
 
 sudo apt install tree -y
 sudo apt install zsh -y
-sudo chsh -s /bin/zsh
+sudo chsh -s $(which zsh)
 
 git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
 sudo apt-get install autojump
