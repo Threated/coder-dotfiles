@@ -3,3 +3,5 @@
 	email = jan.skiba@dkfz-heidelberg.de
 [init]
 	defaultBranch = main
+[core]
+    editor = vim
