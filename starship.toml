@@ -1,0 +1,10 @@
+# Starship config
+
+[hostname]
+disabled = true
+
+[container]
+disabled = true
+
+[status]
+disabled = false
