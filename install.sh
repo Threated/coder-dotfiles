@@ -12,7 +12,7 @@ cargo binstall ripgrep -y
 cargo binstall bat -y
 
 sudo apt install zsh -y
-chsh -s /bin/zsh
+sudo chsh -s /bin/zsh
 
 git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
 
