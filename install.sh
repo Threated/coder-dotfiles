@@ -1,5 +1,7 @@
 #!/bin/bash -e
 
+sudo apt update && sudo apt upgrade
+
 source /verbis/functions.sh
 
 verbis_defaults_main
