@@ -44,7 +44,6 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosugges
 sudo apt-get install autojump
 
 cargo binstall starship -y
-export STARSHIP_CONFIG=$HOME/.config/coderv2/dotfiles/starship.toml
 
 verbis_symlink_cache_dir git
 
