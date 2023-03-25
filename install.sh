@@ -7,15 +7,16 @@ source /verbis/functions.sh
 verbis_defaults_main
 verbis_defaults_rust
 
-cargo install ripgrep
-cargo install bat
+cargo install cargo-binstall
+cargo binstall ripgrep -y
+cargo binstall bat -y
 
 sudo apt install zsh -y
 chsh -s /bin/zsh
 
 git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
 
-cargo install starship --locked
+cargo binstall starship -y
 
 verbis_symlink_cache_dir git
 
