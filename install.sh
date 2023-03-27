@@ -1,6 +1,7 @@
 #!/bin/bash -e
 
 sudo apt update -y && sudo apt upgrade -y
+sudo apt install python3-pip -y
 
 source /verbis/functions.sh
 
