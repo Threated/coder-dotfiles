@@ -46,6 +46,10 @@ sudo apt-get install autojump
 
 cargo binstall starship -y
 
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
+source $HOME/.profile
+nvm install --lts
+
 verbis_symlink_cache_dir git
 
 stow -t ~ gitconfig
