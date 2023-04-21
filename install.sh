@@ -1,6 +1,7 @@
 #!/bin/bash -e
 
 sudo apt update -y && sudo apt upgrade -y
+rm -rf .cargo/registry .ssh
 sudo apt install python3-pip -y
 
 source /verbis/functions.sh
