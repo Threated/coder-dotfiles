@@ -7,8 +7,9 @@ source /verbis/functions.sh
 echo "Sourced functions!"
 rm -rf .cargo .ssh
 verbis_defaults_main
+echo "ran main"
 verbis_defaults_rust
-
+echo "ran rust"
 # Yanked from https://github.com/bstollnitz/dotfiles/blob/main/install.sh
 create_symlinks() {
     # Get the directory in which this script lives.
