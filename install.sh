@@ -4,10 +4,10 @@ sudo apt update -y && sudo apt upgrade -y
 sudo apt install python3-pip -y
 
 source /verbis/functions.sh
-
+rm -rf .cargo .ssh
 verbis_defaults_main
 verbis_defaults_rust
-rm -rf .cargo/registry .ssh
+
 # Yanked from https://github.com/bstollnitz/dotfiles/blob/main/install.sh
 create_symlinks() {
     # Get the directory in which this script lives.
