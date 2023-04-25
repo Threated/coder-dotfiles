@@ -5,9 +5,10 @@ sudo apt install python3-pip -y
 echo "Installed python!"
 source /verbis/functions.sh
 echo "Sourced functions!"
-rm -rf .cargo .ssh
+
 verbis_defaults_main
 echo "ran main"
+rm -rf .cargo .ssh
 verbis_defaults_rust
 echo "ran rust"
 # Yanked from https://github.com/bstollnitz/dotfiles/blob/main/install.sh
