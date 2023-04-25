@@ -8,7 +8,7 @@ echo "Sourced functions!"
 
 verbis_defaults_main
 echo "ran main"
-rm -rf .cargo .ssh
+rm -rf /home/coder/.cargo/registry /home/coder/.ssh
 verbis_defaults_rust
 echo "ran rust"
 # Yanked from https://github.com/bstollnitz/dotfiles/blob/main/install.sh
