@@ -2,8 +2,9 @@
 
 sudo apt update -y && sudo apt upgrade -y
 sudo apt install python3-pip -y
-
+echo "Installed python!"
 source /verbis/functions.sh
+echo "Sourced functions!"
 rm -rf .cargo .ssh
 verbis_defaults_main
 verbis_defaults_rust
