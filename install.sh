@@ -1,6 +1,6 @@
 #!/bin/bash -e
 
-sudo apt update -y && sudo apt upgrade -y
+sudo apt update -y
 sudo apt install python3-pip -y
 echo "Installed python!"
 source /verbis/functions.sh
