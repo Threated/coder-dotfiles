@@ -1,7 +1,7 @@
 #!/bin/bash -e
 
-apk update -y
-apk install python3-pip -y
+apk update
+apk add --no-cache python3 py3-pip
 echo "Installed python!"
 source /verbis/functions.sh
 echo "Sourced functions!"
@@ -40,8 +40,8 @@ source $HOME/.cargo/env
 cargo binstall ripgrep -y
 cargo binstall bat -y
 
-apk install tree -y
-apk install zsh -y
+apk install tree
+apk install zsh
 chsh -s $(which zsh)
 
 git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
