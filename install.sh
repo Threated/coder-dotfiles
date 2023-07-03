@@ -1,7 +1,7 @@
 #!/bin/bash -e
 
-apk update
-apk add --no-cache python3 py3-pip
+sudo apt update -y
+sudo apt install python3-pip -y
 echo "Installed python!"
 source /verbis/functions.sh
 echo "Sourced functions!"
@@ -40,11 +40,12 @@ source $HOME/.cargo/env
 cargo binstall ripgrep -y
 cargo binstall bat -y
 
-apk install tree
-apk install zsh
-chsh -s $(which zsh)
+sudo apt install tree -y
+sudo apt install zsh -y
+sudo chsh -s $(which zsh)
 
 git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
+sudo apt-get install autojump
 
 cargo binstall starship -y
 
