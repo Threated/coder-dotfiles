@@ -58,6 +58,6 @@ verbis_symlink_cache_dir git
 stow -t ~ gitconfig
 
 # If Samply.Beam not yet present, clone the develop branch
-verbis_clone github.com:samply/beam develop
+verbis_clone git@github.com:samply/beam develop
 
 verbis_install_vscode_extensions ms-azuretools.vscode-docker eamodio.gitlens
