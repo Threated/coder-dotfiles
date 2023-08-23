@@ -2,6 +2,7 @@
 
 sudo apt update -y
 sudo apt install python3-pip -y
+sudo apt install gh -y
 echo "Installed python!"
 source /verbis/functions.sh
 echo "Sourced functions!"
