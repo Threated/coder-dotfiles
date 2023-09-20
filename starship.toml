@@ -1,13 +1,19 @@
 # Starship config
+format = '$all($satus)$line_break$character'
 
 [hostname]
 disabled = true
 
+[status]
+symbol=" "
+success_symbol='[➜ ](bold green)'
+map_symbol=true
+sigint_symbol='⚡'
+disabled = false
+pipestatus=true
+
 [container]
 disabled = true
-
-[status]
-disabled = false
 
 [username]
 disabled = true
