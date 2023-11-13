@@ -9,6 +9,7 @@ echo "Sourced functions!"
 
 verbis_defaults_main
 echo "ran main"
+verbis_symlink_cache_dir git
 rm -rf /home/coder/.cargo/registry
 verbis_defaults_rust
 echo "ran rust"
@@ -54,11 +55,6 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
 source $HOME/.profile
 nvm install --lts
 
-verbis_symlink_cache_dir git
-
 stow -t ~ gitconfig
-
-# If Samply.Beam not yet present, clone the develop branch
-verbis_clone github.com:samply/beam develop
 
 verbis_install_vscode_extensions ms-azuretools.vscode-docker eamodio.gitlens
