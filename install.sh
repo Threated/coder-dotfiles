@@ -10,6 +10,7 @@ echo "Sourced functions!"
 verbis_defaults_main
 echo "ran main"
 verbis_symlink_cache_dir git
+sudo ln -ds /mnt/cache/bridgehead /etc
 rm -rf /home/coder/.cargo/registry
 verbis_defaults_rust
 echo "ran rust"
