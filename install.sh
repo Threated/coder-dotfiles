@@ -1,14 +1,10 @@
 #!/bin/bash -e
 
 sudo apt update -y
-sudo apt install python3-pip -y
-sudo apt install gh -y
-echo "Installed python!"
+
 source /verbis/functions.sh
-echo "Sourced functions!"
 
 verbis_defaults_main
-echo "ran main"
 verbis_symlink_cache_dir git
 sudo ln -ds /mnt/cache/bridgehead /etc
 rm -rf /home/coder/.cargo/registry
@@ -33,6 +29,11 @@ create_symlinks() {
 
 create_symlinks
 
+sudo apt-add-repository ppa:fish-shell/release-3
+sudo apt update
+sudo apt install fish
+sudo chsh -s $(which fish)
+
 curl -L -o out.tgz https://github.com/cargo-bins/cargo-binstall/releases/latest/download/cargo-binstall-x86_64-unknown-linux-musl.tgz
 tar -xf out.tgz
 mv cargo-binstall $HOME/.cargo/bin
@@ -40,22 +41,14 @@ rm out.tgz
 
 source $HOME/.cargo/env
 
-cargo binstall ripgrep -y
-cargo binstall bat -y
+cargo binstall ripgrep bat tre-command starship -y
 
-sudo apt install tree -y
-sudo apt install zsh -y
-sudo chsh -s $(which zsh)
+stow -t ~ gitconfig
 
-git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
-sudo apt-get install autojump
+verbis_install_vscode_extensions ms-azuretools.vscode-docker eamodio.gitlens serayuzgur.crates tamasfe.even-better-toml
 
-cargo binstall starship -y
+sudo apt install python3-pip gh -y
 
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
 source $HOME/.profile
 nvm install --lts
-
-stow -t ~ gitconfig
-
-verbis_install_vscode_extensions ms-azuretools.vscode-docker eamodio.gitlens
