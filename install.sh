@@ -42,10 +42,8 @@ curl -L -o out.tgz https://github.com/cargo-bins/cargo-binstall/releases/latest/
 tar -xf out.tgz
 mv cargo-binstall $HOME/.cargo/bin
 rm out.tgz
-
 source $HOME/.cargo/env
-
-cargo binstall ripgrep bat tre-command starship -y
+cargo binstall ripgrep bat tre-command starship zellij -y
 
 stow -t ~ gitconfig
 
