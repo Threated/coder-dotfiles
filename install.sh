@@ -36,7 +36,7 @@ sudo apt install fish -y
 sudo chsh -s $(which fish)
 sudo usermod -s $(which fish) coder
 mkdir -p ~/.config/fish
-cp 
+ln -s $script_dir/config.fish ~/.config/fish/config.fish
 
 curl -L -o out.tgz https://github.com/cargo-bins/cargo-binstall/releases/latest/download/cargo-binstall-x86_64-unknown-linux-musl.tgz
 tar -xf out.tgz
