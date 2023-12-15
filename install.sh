@@ -31,7 +31,7 @@ create_symlinks
 
 sudo apt-add-repository ppa:fish-shell/release-3
 sudo apt update
-sudo apt install fish
+sudo apt install fish -y
 sudo chsh -s $(which fish)
 
 curl -L -o out.tgz https://github.com/cargo-bins/cargo-binstall/releases/latest/download/cargo-binstall-x86_64-unknown-linux-musl.tgz
