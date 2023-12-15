@@ -9,11 +9,12 @@ verbis_symlink_cache_dir git
 sudo ln -ds /mnt/cache/bridgehead /etc
 rm -rf /home/coder/.cargo/registry
 verbis_defaults_rust
-echo "ran rust"
+
+script_dir=$(dirname "$(readlink -f "$0")")
 # Yanked from https://github.com/bstollnitz/dotfiles/blob/main/install.sh
 create_symlinks() {
     # Get the directory in which this script lives.
-    script_dir=$(dirname "$(readlink -f "$0")")
+    
 
     # Get a list of all files in this directory that start with a dot.
     files=$(find -maxdepth 1 -type f -name ".*")
@@ -33,6 +34,9 @@ sudo apt-add-repository ppa:fish-shell/release-3
 sudo apt update
 sudo apt install fish -y
 sudo chsh -s $(which fish)
+sudo usermod -s $(which fish) coder
+mkdir -p ~/.config/fish
+cp 
 
 curl -L -o out.tgz https://github.com/cargo-bins/cargo-binstall/releases/latest/download/cargo-binstall-x86_64-unknown-linux-musl.tgz
 tar -xf out.tgz
