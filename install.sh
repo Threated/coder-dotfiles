@@ -31,8 +31,7 @@ create_symlinks() {
 create_symlinks
 
 sudo apt-add-repository ppa:fish-shell/release-3
-sudo apt update
-sudo apt install fish -y
+sudo apt install fish clang python3-pip gh -y
 sudo chsh -s $(which fish)
 sudo usermod -s $(which fish) coder
 mkdir -p ~/.config/fish
@@ -44,12 +43,15 @@ mv cargo-binstall $HOME/.cargo/bin
 rm out.tgz
 source $HOME/.cargo/env
 cargo binstall ripgrep bat tre-command starship zellij -y
+# Install mold
+curl -L https://github.com/rui314/mold/releases/download/v2.4.0/mold-2.4.0-x86_64-linux.tar.gz | sudo tar -C /usr/local --strip-components=1 --no-overwrite-dir -xzf -
+echo '[target.x86_64-unknown-linux-gnu]
+linker = "clang"
+rustflags = ["-C", "link-arg=-fuse-ld=/usr/local/bin/mold"]' >> ~/.cargo/config.toml
 
 stow -t ~ gitconfig
 
 verbis_install_vscode_extensions ms-azuretools.vscode-docker eamodio.gitlens serayuzgur.crates tamasfe.even-better-toml
-
-sudo apt install python3-pip gh -y
 
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
 source $HOME/.profile
