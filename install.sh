@@ -45,7 +45,7 @@ source $HOME/.cargo/env
 cargo binstall ripgrep bat tre-command starship zellij -y
 # Install mold
 curl -L https://github.com/rui314/mold/releases/download/v2.4.0/mold-2.4.0-x86_64-linux.tar.gz | sudo tar -C /usr/local --strip-components=1 --no-overwrite-dir -xzf -
-echo '[target.x86_64-unknown-linux-gnu]
+sudo echo '[target.x86_64-unknown-linux-gnu]
 linker = "clang"
 rustflags = ["-C", "link-arg=-fuse-ld=/usr/local/bin/mold"]' >> ~/.cargo/config.toml
 
