@@ -47,7 +47,7 @@ cargo binstall ripgrep bat tre-command starship zellij -y
 curl -L https://github.com/rui314/mold/releases/download/v2.4.0/mold-2.4.0-x86_64-linux.tar.gz | sudo tar -C /usr/local --strip-components=1 --no-overwrite-dir -xzf -
 echo '[target.x86_64-unknown-linux-gnu]
 linker = "clang"
-rustflags = ["-C", "link-arg=-fuse-ld=/usr/local/bin/mold"]' | sudo tea -a ~/.cargo/config.toml
+rustflags = ["-C", "link-arg=-fuse-ld=/usr/local/bin/mold"]' | sudo tee -a ~/.cargo/config.toml
 
 stow -t ~ gitconfig
 
