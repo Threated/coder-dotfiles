@@ -1,6 +1,6 @@
 #!/bin/bash -e
 
-sudo apt update -y
+DEBIAN_FRONTEND=noninteractive sudo apt update -y
 sudo apt install software-properties-common -y
 source /verbis/functions.sh
 
