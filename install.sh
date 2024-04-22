@@ -1,6 +1,6 @@
 #!/bin/bash -e
 
-#sudo apt update -y
+sudo apt update -y
 sudo apt install software-properties-common -y
 source /verbis/functions.sh
 
@@ -37,10 +37,10 @@ sudo usermod -s $(which fish) coder
 mkdir -p ~/.config/fish
 ln -s $script_dir/config.fish ~/.config/fish/config.fish
 
-curl -L -o out.tgz https://github.com/cargo-bins/cargo-binstall/releases/latest/download/cargo-binstall-x86_64-unknown-linux-musl.tgz
-tar -xf out.tgz
-mv cargo-binstall $HOME/.cargo/bin
-rm out.tgz
+#curl -L -o out.tgz https://github.com/cargo-bins/cargo-binstall/releases/latest/download/cargo-binstall-x86_64-unknown-linux-musl.tgz
+#tar -xf out.tgz
+#mv cargo-binstall $HOME/.cargo/bin
+#rm out.tgz
 source $HOME/.cargo/env
 cargo binstall ripgrep bat tre-command starship zellij -y
 # Install mold
