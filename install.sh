@@ -6,7 +6,7 @@ source /verbis/functions.sh
 
 verbis_defaults_main
 verbis_symlink_cache_dir git
-sudo ln -ds /mnt/cache/bridgehead /etc
+sudo ln -ds /mnt/cache/bridgehead /etc || true
 rm -rf /home/coder/.cargo/registry
 verbis_defaults_rust
 
@@ -28,14 +28,14 @@ create_symlinks() {
     done
 }
 
-create_symlinks
+create_symlinks || true
 
 sudo apt-add-repository ppa:fish-shell/release-3
-sudo apt install fish clang python3-pip gh -y
+sudo apt install fish python3-pip gh -y
 sudo chsh -s $(which fish)
 sudo usermod -s $(which fish) coder
 mkdir -p ~/.config/fish
-ln -s $script_dir/config.fish ~/.config/fish/config.fish
+ln -s $script_dir/config.fish ~/.config/fish/config.fish || true
 
 #curl -L -o out.tgz https://github.com/cargo-bins/cargo-binstall/releases/latest/download/cargo-binstall-x86_64-unknown-linux-musl.tgz
 #tar -xf out.tgz
@@ -44,10 +44,10 @@ ln -s $script_dir/config.fish ~/.config/fish/config.fish
 source $HOME/.cargo/env
 cargo binstall ripgrep bat tre-command starship zellij -y
 # Install mold
-curl -L https://github.com/rui314/mold/releases/download/v2.4.0/mold-2.4.0-x86_64-linux.tar.gz | sudo tar -C /usr/local --strip-components=1 --no-overwrite-dir -xzf -
-echo '[target.x86_64-unknown-linux-gnu]
-linker = "clang"
-rustflags = ["-C", "link-arg=-fuse-ld=/usr/local/bin/mold"]' | sudo tee -a ~/.cargo/config.toml
+#curl -L https://github.com/rui314/mold/releases/download/v2.4.0/mold-2.4.0-x86_64-linux.tar.gz | sudo tar -C /usr/local --strip-components=1 --no-overwrite-dir -xzf -
+#echo '[target.x86_64-unknown-linux-gnu]
+#linker = "clang"
+#rustflags = ["-C", "link-arg=-fuse-ld=/usr/local/bin/mold"]' | sudo tee -a ~/.cargo/config.toml
 
 stow -t ~ gitconfig
 
