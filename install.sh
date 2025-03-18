@@ -30,7 +30,7 @@ create_symlinks() {
 
 create_symlinks || true
 
-sudo apt-add-repository ppa:fish-shell/release-3
+sudo apt-add-repository ppa:fish-shell/release-4
 sudo apt install fish python3-pip gh -y
 sudo chsh -s $(which fish)
 sudo usermod -s $(which fish) coder
