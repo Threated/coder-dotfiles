@@ -5,7 +5,6 @@ set -g fish_greeting
 starship init fish | source
 
 alias py 'python3'
-alias cat 'bat'
 alias rgf 'rg --files | rg'
 alias lsa 'ls -la'
 alias dockerip "docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}'"

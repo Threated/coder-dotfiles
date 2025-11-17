@@ -30,19 +30,21 @@ create_symlinks() {
 
 create_symlinks || true
 
-sudo apt-add-repository ppa:fish-shell/release-4
+sudo apt-add-repository ppa:fish-shell/release-4 -y
 sudo apt install fish python3-pip gh -y
 sudo chsh -s $(which fish)
 sudo usermod -s $(which fish) coder
-mkdir -p ~/.config/fish
+mkdir -p ~/.config/fish ~/.config/jj ~/.config/nix
 ln -s $script_dir/config.fish ~/.config/fish/config.fish || true
+ln -s $script_dir/jj-config.toml ~/.config/jj/config.toml || true
+ln -s $script_dir/nix.conf ~/.config/nix/nix.conf || true
 
 #curl -L -o out.tgz https://github.com/cargo-bins/cargo-binstall/releases/latest/download/cargo-binstall-x86_64-unknown-linux-musl.tgz
 #tar -xf out.tgz
 #mv cargo-binstall $HOME/.cargo/bin
 #rm out.tgz
 source $HOME/.cargo/env
-cargo binstall ripgrep bat tre-command starship zellij -y
+cargo binstall ripgrep bat tre-command starship typos-cli -y
 # Install mold
 #curl -L https://github.com/rui314/mold/releases/download/v2.4.0/mold-2.4.0-x86_64-linux.tar.gz | sudo tar -C /usr/local --strip-components=1 --no-overwrite-dir -xzf -
 #echo '[target.x86_64-unknown-linux-gnu]
@@ -51,8 +53,7 @@ cargo binstall ripgrep bat tre-command starship zellij -y
 
 stow -t ~ gitconfig
 
-verbis_install_vscode_extensions ms-azuretools.vscode-docker eamodio.gitlens serayuzgur.crates tamasfe.even-better-toml
+curl -L https://nixos.org/nix/install | sh -s -- --no-daemon || true
 
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
-source $HOME/.profile
-nvm install --lts
+nix profile add nixpkgs#jujutsu
+

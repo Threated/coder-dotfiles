@@ -16,3 +16,5 @@ export STARSHIP_CONFIG=$HOME/.config/coderv2/dotfiles/starship.toml
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+
+if [ -e /home/coder/.nix-profile/etc/profile.d/nix.sh ]; then . /home/coder/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
