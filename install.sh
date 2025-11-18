@@ -54,6 +54,7 @@ cargo binstall ripgrep bat tre-command starship typos-cli -y
 stow -t ~ gitconfig
 
 curl -L https://nixos.org/nix/install | sh -s -- --no-daemon || true
+. /home/coder/.nix-profile/etc/profile.d/nix.sh
 
 nix profile add nixpkgs#jujutsu
 
