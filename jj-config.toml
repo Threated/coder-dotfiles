@@ -5,3 +5,4 @@ name = "Skiba Jan"
 
 [ui]
 editor = "vim"
+default-command = "log"

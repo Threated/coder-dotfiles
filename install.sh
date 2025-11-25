@@ -1,4 +1,4 @@
-#!/bin/bash -e
+#!/bin/bash -ex
 
 DEBIAN_FRONTEND=noninteractive sudo apt update -y
 sudo apt install software-properties-common -y
