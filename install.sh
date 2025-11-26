@@ -44,7 +44,7 @@ ln -s $script_dir/nix.conf ~/.config/nix/nix.conf || true
 #mv cargo-binstall $HOME/.cargo/bin
 #rm out.tgz
 source $HOME/.cargo/env
-cargo binstall ripgrep bat tre-command starship typos-cli -y
+cargo binstall ripgrep bat tre-command starship typos-cli just tokei cargo-nextest -y
 # Install mold
 #curl -L https://github.com/rui314/mold/releases/download/v2.4.0/mold-2.4.0-x86_64-linux.tar.gz | sudo tar -C /usr/local --strip-components=1 --no-overwrite-dir -xzf -
 #echo '[target.x86_64-unknown-linux-gnu]
